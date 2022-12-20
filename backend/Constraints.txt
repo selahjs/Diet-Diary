@@ -1,0 +1,10 @@
+Constraints
+- Insert only created users and meals to the shared db
+- Insert meal x for user x in to shared db
+- first check if the user exists, if not create the user
+- second if the meal exists, if not create the meal
+
+Functionalities
+- user x ate meal x
+- user y created meal y and ate it
+- user x/y deleted meal x/y
