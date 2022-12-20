@@ -61,8 +61,7 @@ const saveMeals = async (req, res) => {
   }
   //get meals for a single user
   const getUserMeals = async (req, res) => {
-    const uid = req.params;
-    //console.log(uid);
+    const uid = req.params; //the uid is an object with a uid property, we have to destructure it like uid.uid
     await db.query(
       "select name,etype from eats as e inner join meals as m on e.mid = m.id inner join users as u on e.uid = u.id where e.uid = ?",
       [uid.uid],

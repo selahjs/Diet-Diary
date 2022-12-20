@@ -19,6 +19,11 @@ const {
 app.use(cors());
 app.use(express.json());
 
+app.use((req,res,next)=>{
+  console.log(req.path, req.method);
+  next();
+})
+
 //#1 - home root api
 app.get("/", (req, res) => {
   res.json("Diet Diary Home");
@@ -45,4 +50,4 @@ app.post("/api/user/login", login);
 
 
 
-app.listen(process.env.PORT, () => console.log("listning on port 3000"));
+app.listen(process.env.PORT, () => console.log("listning on port 3001"));

@@ -83,7 +83,7 @@ nav {
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
-    background: #fff;
+    background: rgb(244, 241, 241);
     border-radius: 4px;
   }
   label, input {
@@ -100,11 +100,23 @@ nav {
   }
   form button {
     background: var(--primary);
-    border: 0;
-    color: #fff;
+    border: 1 solid black;
+    color: rgb(58, 55, 55);
     padding: 10px;
     font-family: "Poppins";
     border-radius: 4px;
     cursor: pointer;
+  }
+
+  div.error {
+    padding: 10px;
+    background: #f3aaaa;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+  input.error {
+    border: 1px solid var(--error);
   }
   

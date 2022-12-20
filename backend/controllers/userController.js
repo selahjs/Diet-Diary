@@ -74,7 +74,7 @@ const signup = async (req, res) => {
             res.status(400).json({ error: err.message });
           }
           if(!result.length>0){
-            res.status(400).json('Email not registered');
+            res.status(400).json({error:'Email not registered'});
           }
           //if the email exist check if passwords match... this code runs when there is a result
           else{
@@ -90,10 +90,11 @@ const signup = async (req, res) => {
                 const match =  await bcrypt.compare(password, pass[0]);
 
                 if(!match){
-                    res.status(400).send('Incorrect Password'); 
+                    res.status(400).send({error:'Incorrect Password'}); 
                 }else{
                     const token = createToken(email);
                     res.status(200).json({email, token});
+                    //console.log(res.status(200).json({email, token}))
                 }
         
                 
